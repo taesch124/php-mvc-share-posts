@@ -4,29 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/main.css">
     <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>/css/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/main.css">
     <title><?php echo SITENAME ?></title>
 </head>
 <body>
 
-<div class="ui secondary pointing menu">
-  <a class="active item">
-    <?php echo SITENAME ?>
-  </a>
-  <a class="item">
-    Posts
-  </a>
-  <div class="right menu">
-    <a class="ui item">
-      Logout
-    </a>
-  </div>
-</div>
+<?php require APPROOT.'/views/inc/navbar.php'; ?>
 
-<div class="ui grid">
+<div class="ui center aligned padded grid">
     <div class="sixteen wide column">
-        <div class="ui container">
+        <div class="ui masthead">
             <h2 class="ui header">
                 <i class="icon paper plane"></i>
                 <?php echo $data['title']; ?>

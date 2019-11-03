@@ -1,5 +1,14 @@
 <?php require APPROOT.'/views/inc/header.php'; ?>
 
-<h1><?php echo $data['title']; ?></h1>
+<div class="ui center align grid">
+    <div class="twelve wide column centered">
+        <div class="ui segment">
+            <p>App to share posts with other users</p>
+            <p><strong>Version: <?php echo APP_VERSION ?></strong></p>
+        </div>
+    </div>
+</div>
+
+
 
 <?php require APPROOT.'/views/inc/footer.php'; ?>

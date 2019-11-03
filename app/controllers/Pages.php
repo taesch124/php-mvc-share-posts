@@ -3,7 +3,6 @@
 class Pages extends Controller {
     public function __construct() {
         $this->postModel = $this->model('Post');
-        $this->userModel = $this->model('User');
     }
 
     public function index() {
