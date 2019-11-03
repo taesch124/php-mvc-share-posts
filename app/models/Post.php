@@ -8,7 +8,15 @@ class Post {
     }
 
     public function getPosts() {
-        $this->db->query('SELECT * FROM posts;');
+        $this->db->query('SELECT 
+        p.title,
+        p.text,
+        p.created_at,
+        u.name 
+        FROM posts p
+        INNER JOIN users u
+        ON p.user_id = u.id;'
+    );
 
         return $this->db->resultSet();
     }
