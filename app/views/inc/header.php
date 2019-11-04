@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>/css/semantic/dist/semantic.min.css">
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/main.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>css/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>css/main.css">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/styles.css">
 
     <script src="<?php echo URLROOT ?>/js/jquery/jquery.min.js"></script>
@@ -18,11 +18,11 @@
 
 <?php require APPROOT.'/views/inc/navbar.php'; ?>
 
-<div class="ui segment">
+<div id="main-content" class="ui inverted segment">
     <div class="ui center aligned padded grid">
         <div class="sixteen wide column">
             <div class="ui masthead">
-                <h2 class="ui header">
+                <h2 class="ui inverted header">
                     <i class="icon paper plane"></i>
                     <?php echo $data['title']; ?>
                 </h2>
