@@ -33,13 +33,16 @@
 
                     <div class="ui container">
                         <button class="ui button primary fluid" type="submit">Register</button>
-                        <a class="ui button secondary fluid" type="link" href="<?php echo URLROOT?>/users/login">Login</a>
+                        <div class="ui hidden fitted divider"></div>
+                        <div class="ui center aligned container">
+                            Already have an account? <a href="<?php echo URLROOT?>users/login">Login</a>
+                        </div>
                     </div>
 
-                    <div class="ui error message">
-                        <ul>
-                            <?php foreach($errors as $error): ?>
-                            <li><?php echo $error['field'].': '.$error['message'] ?></li>
+                    <div class="ui error message" style="display: <?php echo empty($data['errors']) ? 'none' : 'block' ?>">
+                        <ul class="list">
+                            <?php foreach($data['errors'] as $field => $error): ?>
+                            <li><?php echo ucwords($field).': '.$error ?></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
