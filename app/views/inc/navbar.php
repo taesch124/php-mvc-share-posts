@@ -1,5 +1,5 @@
 
-<div class="ui secondary menu">
+<div class="ui stackable fixed secondary menu">
     <div class="ui container padded">
         <a href="<?php echo URLROOT ?>" class="item <?php echo $data['title'] == 'SharePosts' ? 'active' : ''; ?>">
             <?php echo SITENAME ?>

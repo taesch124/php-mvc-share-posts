@@ -3,7 +3,7 @@ body {
 }
 
 .ui.secondary.menu {
-    background-color: whitesmoke;
+    background-color: rgb(250, 250, 250);
     margin-bottom: 0;
 }
 
@@ -11,6 +11,23 @@ body {
     margin-top: 0;
     margin-bottom: 0;
     width: 100vw;
-    min-height: calc(100vh - 2.85714286em);
+    min-height: 100vh;
     background: rgb(62, 80, 138);
+}
+
+.ui.message.flash {
+    position: fixed;
+    z-index: 10;
+    bottom: 2em;
+    right: 3em;
+    max-width: 420px;
+}
+
+.ui.card>.content>.description.list-body {
+    max-height: 80px;
+    overflow-y: hidden;
+}
+
+.ui.card .meta * {
+    margin: 0;
 }

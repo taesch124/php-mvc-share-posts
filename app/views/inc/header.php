@@ -19,6 +19,8 @@
 <?php require APPROOT.'/views/inc/navbar.php'; ?>
 
 <div id="main-content" class="ui inverted segment">
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
     <div class="ui center aligned padded grid">
         <div class="sixteen wide column">
             <div class="ui masthead">

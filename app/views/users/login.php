@@ -2,18 +2,18 @@
 
 
 
-<div class="ui stackable grid">
-    <div class="ui container">
-        <div class="twelve wide column">
-            <div class="ui segment">
+<div class="ui center aligned stackable grid">
+    <div class="ui ten wide column">    
+        <div class="ui container">    
+            <div class="ui left aligned segment">
                 <?php flash('register_success') ?>
                 <form action="<?php echo URLROOT?>/users/login" method="POST" class="ui form">
                     <div class="two fields">
-                        <div class="field <?php echo (!empty($data['email_error'])) ? 'error' : ''?>">
+                        <div class="field <?php echo (!empty($data['errors']['email'])) ? 'error' : ''?>">
                             <label>E-mail:</label>
                             <input type="email" name="email" placeholder="Email" value="<?php echo $data['email']?>"/>
                         </div>
-                        <div class="field <?php echo (!empty($data['password_error'])) ? 'error' : ''?>">
+                        <div class="field <?php echo (!empty($data['errors']['password'])) ? 'error' : ''?>">
                             <label>Password:</label>
                             <input type="password" name="password" placeholder="Password" value="<?php echo $data['password']?>"/>
                         </div>

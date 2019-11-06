@@ -3,7 +3,7 @@
 session_start();
 
 //Flash messaging
-function flash($name = '', $message = '', $class = 'ui message success') {
+function flash($name = '', $message = '', $class = 'ui message success flash') {
     if(!empty($name)) {
         if(!empty($message) && empty($_SESSION[$name])) {
 

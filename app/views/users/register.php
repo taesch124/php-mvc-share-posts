@@ -1,14 +1,14 @@
 <?php require APPROOT.'/views/inc/header.php'; ?>
 
-<div class="ui stackable grid">
-    <div class="ui container">
-        <div class="twelve wide column">
+<div class="ui center aligned stackable grid">
+    <div class="ui ten wide column">
+        <div class="ui container">
             <div class="ui center aligned segment">
                 <h3>Create an Account</h3>
                 <p>Please register to start posting</p>
             </div>
-            <div class="ui segment">
-                <form action="<?php echo URLROOT?>/users/register" method="POST" class="ui form">
+            <form action="<?php echo URLROOT?>/users/register" method="POST" class="ui form">
+                <div class="ui left aligned segment">
                     <div class="two fields">
                         <div class="required field <?php echo (!empty($data['name_error'])) ? 'error' : ''?>">
                             <label class="left aligned content">Name:</label>
@@ -46,8 +46,8 @@
                             <?php endforeach; ?>
                         </ul>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
