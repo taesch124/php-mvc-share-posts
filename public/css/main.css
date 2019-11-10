@@ -31,3 +31,20 @@ body {
 .ui.card .meta * {
     margin: 0;
 }
+
+.ui.card .header {
+    font-size: 2rem;
+}
+
+.card>.content>.grid>.column {
+    padding: .75rem;
+}
+
+#post-header {
+    padding-bottom: 0;
+    padding-top: .5rem;
+}
+
+#post-meta {
+    margin-bottom: .25rem;
+}

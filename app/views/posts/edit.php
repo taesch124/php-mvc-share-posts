@@ -11,8 +11,8 @@
                     </a>
                 </div>
                 <div class="ui hidden divider"></div>
-                <?php flash('register_success') ?>
-                <form action="<?php echo URLROOT?>posts/edit" method="POST" class="ui form">
+                <?php flash('post_created'); ?>
+                <form action="<?php echo URLROOT?>posts/edit/<?php echo $data['post']['post_id']; ?> " method="POST" class="ui form">
                     <div class="field <?php echo (!empty($data['errors']['title'])) ? 'error' : ''?>">
                         <label>Title:</label>
                         <input type="text" name="title" placeholder="" value="<?php echo $data['post']['title']?>"/>
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="ui container">
-                        <button class="ui primary button fluid" type="submit">Post</button>
+                        <button class="ui primary button fluid" type="submit">Edit</button>
                     </div>
 
                     <div class="ui error message" style="display: <?php echo empty($data['errors']) ? 'none' : 'block' ?>">

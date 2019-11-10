@@ -30,6 +30,7 @@ class Post {
         u.id AS user_id,
         p.title,
         p.text,
+        p.edited,
         p.created_at,
         u.name 
         FROM posts p
@@ -55,5 +56,33 @@ class Post {
         } else {
             return false;
         }
+    }
+
+    public function editPost($data) {
+        $this->db->query('UPDATE posts
+        SET title = :title,
+        text = :body,
+        edited = :edit_count
+        WHERE id = :post_id');
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':body', $data['body']);
+        $this->db->bind(':edit_count', $data['edit_count']);
+        $this->db->bind(':post_id', $data['post_id']);
+
+        if($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function deletePost($id) {
+        $this->db->query('DELETE FROM posts
+        WHERE id = :id;');
+        $this->db->bind(':id', $id, PDO::PARAM_INT);
+
+        if($this->db->execute()) {
+            return true;
+        } else return false;
     }
 }

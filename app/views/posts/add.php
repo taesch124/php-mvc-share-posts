@@ -11,7 +11,7 @@
                     </a>
                 </div>
                 <div class="ui hidden divider"></div>
-                <?php flash('register_success') ?>
+                <?php flash('post_created'); ?>
                 <form action="<?php echo URLROOT?>posts/add" method="POST" class="ui form">
                     <div class="field <?php echo (!empty($data['errors']['title'])) ? 'error' : ''?>">
                         <label>Title:</label>

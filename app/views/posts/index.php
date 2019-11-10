@@ -15,23 +15,41 @@
     <div class="ten wide column">
         <div class="ui container">
         <?php flash('post_created'); ?>
+        <?php flash('post_edited'); ?>
+        <?php flash('post_deleted'); ?>
             <div class="ui list">
                 <?php foreach($data['posts'] as $post): ?>
                     <div class="item">
                         <div class="ui card fluid">
                             <div class="content">
-                                <a class="header"><?php echo $post->title; ?></a>
-                                <div class="meta">
-                                    <span><?php echo $post->name.' @ '.$post->created_at; ?></span>
-                                </div>
-                                <div class="list-body description">
-                                    <?php echo $post->text; ?>
-                                </div>
-                                <div class="ui hidden fitted divider"></div>
-                                <div class="meta">
-                                    <a class="ui mini button basic blue" href="<?php echo URLROOT; ?>posts/detail/<?php echo $post->post_id; ?>" >
-                                        More...
-                                    </a>
+                                <div class="ui grid stackable">
+                                    <div class="ui sixteen wide column">
+                                        <a class="header"><?php echo $post->title; ?></a>
+                                    </div>
+                                    <div class="ui meta eight wide column">
+                                        <span><?php echo $post->name.' @ '.$post->created_at; ?></span>
+                                    </div>
+                                    <div class="ui meta right aligned eight wide column">
+                                        <?php if($_SESSION['user_id'] == (string)$post->user_id): ?>
+                                            <a title= "Edit post" href="<?php echo URLROOT; ?>posts/edit/<?php echo $post->post_id ?>" class="ui icon floated right">
+                                                <i class="icon pencil"></i>
+                                            </a>
+                                            <a title="Delete post" href="<?php echo URLROOT; ?>posts/delete/<?php echo $post->post_id ?>" class="ui icon floated right">
+                                                <i class="icon delete"></i>
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="ui sixteen wide column">
+                                        <div class="list-body description">
+                                            <?php echo $post->text; ?>
+                                        </div>
+                                    </div>
+                                    <div class="ui hidden fitted divider"></div>
+                                    <div class="ui meta sixteen wide column">
+                                        <a class="ui mini button basic blue" href="<?php echo URLROOT; ?>posts/detail/<?php echo $post->post_id; ?>" >
+                                            More...
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -77,6 +77,7 @@ class Posts extends Controller {
                 'title' => $post->title,
                 'body' => $post->text,
                 'name' => $post->name,
+                'edited' => $post->edited,
                 'created_at' => $post->created_at,
             ],
         ];
@@ -84,9 +85,28 @@ class Posts extends Controller {
         if($_SERVER['REQUEST_METHOD'] == 'GET') {
             return $this->view('posts/edit', $data);
         } else if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            
+            $data['post'] = [
+                'post_id' => $id,
+                'title' => trim($_POST['title']),
+                'body' => trim($_POST['body']),
+                'edit_count' => $post->edited + 1,
+            ];
+
+            if($this->postModel->editPost($data['post'])) {
+                flash('post_edited', 'Your post has been edited.');
+                redirect('/posts');
+            }
         }
 
+    }
+
+    public function delete($id) {
+        if($this->postModel->deletePost($id)) {
+            flash('post_deleted', 'Your post has been deleted');
+            redirect('posts');
+        } else {
+            die('Something went wrong deleting post');
+        }
     }
 
     public function detail($id) {
@@ -99,6 +119,7 @@ class Posts extends Controller {
                 'title' => $post->title,
                 'body' => $post->text,
                 'name' => $post->name,
+                'edited' => $post->edited,
                 'created_at' => $post->created_at,
             ],
         ];
